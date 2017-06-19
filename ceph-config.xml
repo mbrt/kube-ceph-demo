@@ -1,0 +1,25 @@
+<cephConfig>
+  <journalsize>512</journalsize>
+  <osdpooldefaultsize>2</osdpooldefaultsize>
+  <monitors>
+    <monitor bootstrap="auto">
+      <monitordata>/var/lib/ceph/mon/$cluster-$hostname</monitordata>
+      <hostname>node001</hostname>
+    </monitor>
+
+  </monitors>
+  <osds>
+    <osd>
+      <osdassociations>
+        <osdassociation>
+          <name>osd0</name>
+          <osddata>/var/lib/ceph/osd/$cluster-$id</osddata>
+          <journaldata>/var/lib/ceph/osd/$cluster-$id/journal</journaldata>
+        </osdassociation>
+
+      </osdassociations>
+      <category>default</category>
+    </osd>
+
+  </osds>
+</cephConfig>

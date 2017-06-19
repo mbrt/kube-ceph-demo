@@ -1,0 +1,59 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: app-pvc
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: fast
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: myapp
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: myapp
+        tier: frontend
+    spec:
+      containers:
+      - name: webserver
+        image: python:3
+        args:
+        - 'python3'
+        - '-m'
+        - 'http.server'
+        - '80'
+        resources:
+          requests:
+            cpu: 100m
+            memory: 100Mi
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: app-storage
+          mountPath: /data
+      volumes:
+      - name: app-storage
+        persistentVolumeClaim:
+          claimName: app-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend
+  labels:
+    app: myapp
+    tier: frontend
+spec:
+  ports:
+  - port: 80
+  selector:
+    app: myapp
+    tier: frontend

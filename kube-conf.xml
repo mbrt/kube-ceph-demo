@@ -1,0 +1,32 @@
+<kubeConfig>
+    <script>
+        <drymode enabled="0"/>
+    </script>
+    <clustername>default</clustername>
+    <kubedomain>cluster.local.</kubedomain>
+    <runonhead>0</runonhead>
+    <categories>default</categories>
+    <podnetworkname>kubepodnet</podnetworkname>
+    <podnetworkbaseaddress>172.29.0.0</podnetworkbaseaddress>
+    <podnetworkbits>16</podnetworkbits>
+    <svcnetworkname>kubeservicenet</svcnetworkname>
+    <svcnetworkbaseaddress>10.150.0.0</svcnetworkbaseaddress>
+    <svcnetworkbits>16</svcnetworkbits>
+    <insecureapiport>8085</insecureapiport>
+    <secureapiport>6443</secureapiport>
+    <kubeletport>10250</kubeletport>
+    <healthcheckport>10251</healthcheckport>
+    <controllerPort>10252</controllerPort>
+    <schedulerPort>10253</schedulerPort>
+    <kubedns>1</kubedns>
+    <kubednsbindaddress>0.0.0.0</kubednsbindaddress>
+    <kubednsadvertiseaddress>0.0.0.0</kubednsadvertiseaddress>
+    <kubednshealthport>18081</kubednshealthport>
+    <kubedashboard>1</kubedashboard>
+    <kubedashboardadvertiseaddress>0.0.0.0</kubedashboardadvertiseaddress>
+    <kubedashboardport>19090</kubedashboardport>
+    <heapster>1</heapster>
+    <heapsteradvertiseaddress>0.0.0.0</heapsteradvertiseaddress>
+    <heapsterport>8082</heapsterport>
+    <etcdspooldir>/var/lib/etcd</etcdspooldir>
+</kubeConfig>
