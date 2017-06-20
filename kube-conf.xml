@@ -5,7 +5,7 @@
     <clustername>default</clustername>
     <kubedomain>cluster.local.</kubedomain>
     <runonhead>0</runonhead>
-    <categories>default</categories>
+    <categories>kube</categories>
     <podnetworkname>kubepodnet</podnetworkname>
     <podnetworkbaseaddress>172.29.0.0</podnetworkbaseaddress>
     <podnetworkbits>16</podnetworkbits>
