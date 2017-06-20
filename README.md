@@ -12,12 +12,12 @@ $./setup-bright.sh
 Then wait for the nodes to reboot.
 
 ## Setup on a non-Bright cluster
-Even if you don't have a Bright cluster, you can still setup Ceph and Kubernetes
-the way you prefer.
+You can run the demo even if you don't have a cluster setup with Bright Cluster Manager.
+Deploy Ceph and Kubernetes the way you prefer and make sure you have working `kubectl` and
+`ceph` commands on the head node of the cluster.
 
 ## When you have Ceph and Kubernetes
-When you have them, you can try the demo by running the following scripts in
-sequence:
+You can run the demo by using the following scripts in sequence:
 
 ```
 ./create-pool.sh
@@ -32,3 +32,5 @@ To delete the app:
 ```
 kubectl delete -f app.yaml
 ```
+
+Verify that the created Persistent Volume is gone by using `kubectl get pv`.
